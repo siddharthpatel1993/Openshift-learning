@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ipivrdeploy
+  name: ipivrdeploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ipivrdeploy
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: ipivrdeploy
+    spec:
+      containers:
+      - image: bitnami/nginx:latest
+        name: nginx
+        resources: {}
+status: {}
